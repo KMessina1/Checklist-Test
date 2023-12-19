@@ -1,5 +1,3 @@
-//
-
 /*--------------------------------------------------------------------------------------------------------------------------
     File: Checklist_TestApp.swift
   Author: Kevin Messina
@@ -11,15 +9,32 @@ Modified:
 NOTES:
 --------------------------------------------------------------------------------------------------------------------------*/
 
-
-
 import SwiftUI
 
 @main
 struct Checklist_TestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CheckListView(
+                bindingSelection: .constant(0),
+                items: testData,
+                boxShape: .shield,
+                boxFill: .filled,
+                boxMark: .check,
+                textColor: .white,
+                selection: .single,
+                selectionHighlight: .outline,
+                selectionHighlightTextColor: .black,
+                selectionHighlightColor: .yellow,
+                textAlignment: .leading,
+                unselectedColor: .gray,
+                backColor: .clear,
+                fontSize: 18,
+                height: 160,
+                width: 300,
+                rowHeight: 30
+            )
+            .background(Color.black)
         }
     }
 }
